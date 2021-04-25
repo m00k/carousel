@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h } from 'preact';
 import { Story } from '@storybook/preact';
-import { Button, ButtonProps } from './Button';
+import { Button, ButtonProps } from './index';
 
 export default {
   title: 'Example/Button',

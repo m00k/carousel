@@ -1,10 +1,8 @@
 import { FunctionalComponent, h } from 'preact';
-import Header from './header2';
 
 const App: FunctionalComponent = () => {
     return (
         <div id="preact_root">
-            <Header />
             <main>TODO</main>
         </div>
     );
