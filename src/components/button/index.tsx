@@ -1,6 +1,6 @@
 /** @jsx h */
 import { FunctionComponent, h } from 'preact';
-import './style.css';
+import './styles.css';
 
 export interface ButtonProps {
   primary?: boolean;
