@@ -1,6 +1,7 @@
 /** @jsx h */
 import { h } from 'preact';
-import { Button } from './Button';
+import { Story } from '@storybook/preact';
+import { Button, ButtonProps } from './Button';
 
 export default {
   title: 'Example/Button',
@@ -11,7 +12,7 @@ export default {
   },
 };
 
-const Template = (args) => <Button {...args} />;
+const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
