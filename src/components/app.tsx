@@ -1,5 +1,5 @@
 import { FunctionalComponent, h } from 'preact';
-import Header from './header';
+import Header from './header2';
 
 const App: FunctionalComponent = () => {
     return (

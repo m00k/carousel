@@ -1,7 +1,7 @@
-import { FunctionalComponent, h } from 'preact';
+import { FunctionComponent, h } from 'preact';
 import style from './style.css';
 
-const Header: FunctionalComponent = () => {
+const Header2: FunctionComponent = () => {
     return (
         <header class={style.header}>
             <h1>Preact App</h1>
@@ -16,4 +16,4 @@ const Header: FunctionalComponent = () => {
     );
 };
 
-export default Header;
+export default Header2;
