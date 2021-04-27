@@ -8,12 +8,24 @@ export default {
   component: Carousel,
 };
 
+const style = {
+  height: '300px',
+  width: '300px',
+  margin: '0 auto',
+}
+
+const pics = [
+  'https://picsum.photos/482/840',
+  'https://picsum.photos/482/843',
+  'https://picsum.photos/482/844',
+];
+
 const Template: Story<CarouselProps> = (args) => (
-  <Carousel {...args} >
-      <article class="cell" style="--bg: url(https://picsum.photos/482/840);" />
-      <article class="cell" style="--bg: url(https://picsum.photos/482/843);" />
-      <article class="cell" style="--bg: url(https://picsum.photos/482/844);" />
-  </Carousel>
+  <div {...{style}}>
+    <Carousel {...args} >
+      {pics.map(pic => <article class="cell" style={{ ...style, ...{ '--bg': `url(${pic})` } }} />)}
+    </Carousel>
+  </div>
 );
 
 export const Bland = Template.bind({});

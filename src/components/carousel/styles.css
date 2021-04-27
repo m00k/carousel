@@ -1,19 +1,14 @@
 
 .carousel {
-    height: 300px;
-    width: 300px;
-    margin: 0 auto;
-
     display: grid;
-    grid: 1fr / auto-flow 100%;
     gap: 1ch;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    overscroll-behavior: contain;
-    touch-action: pan-x;
-
     grid: [story] 1fr / [story] 1fr;
 
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    touch-action: pan-x;
+    
+    overscroll-behavior: contain;
     scroll-snap-align: start;
     scroll-snap-stop: always;
 }
