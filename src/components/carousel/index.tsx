@@ -32,17 +32,22 @@ const Cell: FunctionComponent<CarouselCellProps> = ({
   url,
 }) => {
   const style = { '--bg': `url(${url})` };
-  const options: ScrollIntoViewOptions = {
-    behavior: 'smooth'
-  };
-  const ref = useRef<HTMLElement>(null);
-  const handleClick = (): void => ref.current?.nextElementSibling?.scrollIntoView(options);
+  const handleClick = (e: any): void => { // TODO: fix types
+    const target: HTMLElement = e.target;
+    const parent: HTMLElement | null = target?.parentElement;
+    if (!parent) return;
+    const median = parent.offsetLeft + (parent.clientWidth / 2)
+    const goNext = e.clientX > median;
+    const scrollTarget: any = goNext // TODO: fix types
+      ? target.nextElementSibling || target.parentElement?.firstElementChild
+      : target.previousElementSibling || target.parentElement?.lastElementChild;
+    scrollTarget?.scrollIntoView({ behavior: 'smooth' });
+  }
 
   return (
     <article
       class="cell"
       {...{style}}
-      ref={ref}
       onClick={handleClick}
     />
   )
