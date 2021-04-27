@@ -4,6 +4,7 @@
     gap: 1ch;
     grid: [story] 1fr / [story] 1fr;
 
+    height: 100%;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     touch-action: pan-x;

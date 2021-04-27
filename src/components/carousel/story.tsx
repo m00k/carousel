@@ -23,7 +23,7 @@ const pics = [
 const Template: Story<CarouselProps> = (args) => (
   <div {...{style}}>
     <Carousel {...args} >
-      {pics.map(pic => <article class="cell" style={{ ...style, ...{ '--bg': `url(${pic})` } }} />)}
+      {pics.map(pic => <Carousel.Cell url={pic} />)}
     </Carousel>
   </div>
 );
