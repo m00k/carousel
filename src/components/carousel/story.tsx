@@ -9,9 +9,10 @@ export default {
 };
 
 const style = {
-  height: '300px',
-  width: '300px',
+  display: 'grid',
   margin: '0 auto',
+  'min-block-size': '80vh',
+  width: '300px',
 }
 
 const pics = [
