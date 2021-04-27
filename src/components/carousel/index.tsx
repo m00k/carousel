@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 /** @jsx h */
-import { FunctionComponent, h, } from 'preact';
+import { FunctionComponent, h } from 'preact';
+import { useRef } from 'preact/hooks';
 import './styles.css';
 
 export interface CarouselProps {
@@ -28,17 +28,26 @@ export interface CarouselCellProps {
   url: string;
 }
 
-// eslint-disable-next-line react/display-name
-Carousel.Cell = ({
+const Cell: FunctionComponent<CarouselCellProps> = ({
   url,
 }) => {
   const style = { '--bg': `url(${url})` };
+  const options: ScrollIntoViewOptions = {
+    behavior: 'smooth'
+  };
+  const ref = useRef<HTMLElement>(null);
+  const handleClick = (): void => ref.current?.nextElementSibling?.scrollIntoView(options);
+
   return (
     <article
       class="cell"
       {...{style}}
+      ref={ref}
+      onClick={handleClick}
     />
   )
 };
+
+Carousel.Cell = Cell;
 
 export default Carousel;

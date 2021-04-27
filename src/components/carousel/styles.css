@@ -1,31 +1,28 @@
 
 .carousel {
     display: grid;
+    grid: 1fr / auto-flow 100%;
     gap: 1ch;
-    grid: [story] 1fr / [story] 1fr;
-
-    height: 100%;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    touch-action: pan-x;
-    
     overscroll-behavior: contain;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
+    touch-action: pan-x;
 }
   
 .cell {
-    grid-area: story;
+    /* outer */
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 
-    background-size: cover;
-    background-image: 
-        var(--bg), 
-        linear-gradient(to top, #777, #ddd);
+  background-size: cover;
+  background-image: 
+      var(--bg), 
+      linear-gradient(to top, #777, #ddd);
 
-    user-select: none;
-    touch-action: manipulation;
+  user-select: none;
+  touch-action: manipulation;
 
-    transition: opacity .3s cubic-bezier(0.4, 0.0, 1, 1);
+  transition: opacity .3s cubic-bezier(0.4, 0.0, 1, 1);
 }
 
 .cell.seen {
