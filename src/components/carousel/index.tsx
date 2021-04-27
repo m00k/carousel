@@ -3,14 +3,10 @@ import { FunctionComponent, h } from 'preact';
 import './styles.css';
 
 export interface CarouselProps {
-  label: string;
 }
 
-/**
- * Primary UI component for user interaction
- */
-export const Carousel: FunctionComponent<CarouselProps> = ({
-  label,
+const Carousel: FunctionComponent<CarouselProps> = ({
+  children,
   ...props
 }) => {
   return (
@@ -18,7 +14,10 @@ export const Carousel: FunctionComponent<CarouselProps> = ({
       className={'carousel'}
       {...props}
     >
-      {label}
+      { children }
     </div>
   );
 };
+
+
+export default Carousel;
